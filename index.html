@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loudry Services</title>
+    <link rel="stylesheet" href="Resources/css/style.css">
+    <link rel="stylesheet" href="Resources/css/queries.css">
+    <link rel="stylesheet" href="Vendors/css/normalize.css">
+    <link rel="stylesheet" href="Vendors/css/grid.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("7lUtrCXQoiOo0aiQL"); // Replace with your EmailJS Public Key
+      })();
+    </script>
+</head>
+<body>
+    
+    <!-- Header Section -->
+
+    <header class="header-section">
+        <div class="logo"><h1>Laundry Wallah</h1></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-name">
+            <h1>Hello, Alex</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="span_1_of_2 div-text">
+                <!-- <div class="div-left"> -->
+                    <h1>Revitalize Your Clothes with Expert</h1>
+                    <h1 style="color: aqua;">Laundry Services!</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, saepe.
+                        Inventore, unde eum rerum maiores officiis architecto ratione pariatur nesciunt.
+                        Officiis sapiente sint architecto quam ea doloremque neque hic nihil?
+                    </p>
+                    <div class="btn-home">
+                        <button type="submit" name="submit" value="name">Book a service today</button>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <div class="span_1_of_2 div-img">
+                <!-- <div class="div-right"> -->
+                    <img class="hero-img" src="Resources/img/laundry-home-img.jpg" alt="washing-machine-img">
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+
+        <div class="our-achievement">
+            <div class="achieve-first-div">
+                <h2>Our Achievements</h2>
+            </div>
+            <div class="achieve-second-div">
+                <div>
+                    <h2>15+</h2>
+                    <p>Laundry Services</p>
+                </div>
+                <div>
+                    <h2>240+</h2>
+                    <p>Happy Customers</p>
+                </div>
+                <div>
+                    <h2>2+ Yrs</h2>
+                    <p>Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Service Section -->
+    
+    <section class="booking-section">
+        <!-- Left Section -->
+        <div class="services-left">
+            <h3>Our Services</h2>
+            <p>Click on The Add to Cart Button To Add The Services To Your Cart!</p>
+
+            <div class="service">
+                <span>🧺 Dry Cleaning - ₹200.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Dry Cleaning',200)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Dry Cleaning')">Remove Item</button>
+                </div>
+            </div>
+
+            <div class="service">
+                <span>🧺 Wash & Fold - ₹100.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Wash & Fold',100)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Wash & Fold')">Remove Item</button>
+                </div>
+            </div>
+
+            <div class="service">
+                <span>🧼 Ironing - ₹30.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Ironing',30)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Ironing')">Remove Item</button>
+                </div>
+            </div>
+
+            <div class="service">
+                <span>🧽 Stain Removal - ₹500.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Stain Removal',500)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Stain Removal')">Remove Item</button>
+                </div>
+            </div>
+
+            <div class="service">
+                <span>🧵 Leather & Suede Cleaning - ₹999.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Leather & Suede Cleaning',999)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Leather & Suede Cleaning')">Remove Item</button>
+                </div>
+            </div>
+
+            <div class="service">
+                <span>👗 Wedding Dress Cleaning - ₹2800.00</span>
+                <div>
+                    <button class="add" onclick="addItem('Wedding Dress Cleaning',2800)">Add Item</button>
+                    <button class="remove" onclick="removeItem('Wedding Dress Cleaning')">Remove Item</button>
+                </div>
+            </div>
+
+            <p class="info-note">ℹ️ Add the items to the cart and book now</p>
+        </div>
+
+        <!-- Right Div: Cart and Booking Form -->
+
+        <div class="cart-right">
+            <!-- Cart -->
+            <div class="cart-items">
+                <h3>Added Items</h3>
+                <table id="cartTable">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart">
+
+                    </tbody>
+                </table>
+                <p class="total">Total Amount: ₹<span id="totalAmount">0</span></p>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking">
+                <h3>Book Now</h3>
+            
+                <div class="form-group">
+                    <h4>Full Name</h4>
+                    <input type="text" id="fullName" placeholder="Enter full name?">
+                </div>
+
+                <div class="form-group">
+                    <h4>Email ID</h4>
+                    <input type="emali" id="email" placeholder="Enter email address!">
+                </div>
+
+                <div class="form-group">
+                    <h4>Number</h4>
+                    <input type="text" id="phone" placeholder="Enter phone number">
+                </div>
+                <button class="book-btn" onclick="sendEmail()">Book Now</button>
+                <p id="confirmationMsg" class="confirmation"></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feature Section -->
+
+    <section class="feature-section">
+        <div class="features">
+            <div class="col span_1_of_4 box">
+                <ion-icon class="icon-big" name="ribbon-outline"></ion-icon> 
+                <h3>Premium Services</h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                    Nemo explicabo reiciendis est commodi?
+                    Facere fuga esse porro perferendis!
+                    Rem nisi cupiditate asperiores nesciunt!
+                </p>
+            </div>
+            <div class="col span_1_of_4 box">
+                <ion-icon class="icon-big" name="help-outline"></ion-icon>
+                <h3>Quick Support</h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                    Nemo explicabo reiciendis est commodi?
+                    Facere fuga esse porro perferendis!
+                    Rem nisi cupiditate asperiores nesciunt!
+                </p>
+            </div>
+            <div class="col span_1_of_4 box">
+                <ion-icon class="icon-big" name="gift-outline"></ion-icon>
+                <h3>Hassle Free Delivery</h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                    Nemo explicabo reiciendis est commodi?
+                    Facere fuga esse porro perferendis!
+                    Rem nisi cupiditate asperiores nesciunt!
+                </p>
+            </div>
+            <div class="col span_1_of_4 box">
+                <ion-icon class="icon-big" name="wallet-outline"></ion-icon>
+                <h3>Affordable Prices</h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                    Nemo explicabo reiciendis est commodi?
+                    Facere fuga esse porro perferendis!
+                    Rem nisi cupiditate asperiores nesciunt!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+
+    <section class="newsletter-section">
+            <div class="news-heading">
+                <h2>Subscribe to our newsletter.</h2>
+            </div>
+            <div class="news-form">
+                <input type="text" name="name" placeholder="Full name">
+                <input type="email" name="email" placeholder="Email">
+                <button type="submit" id="submit" name="submit">Subscribe</button>
+            </div>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer>
+        <div class="footer">
+            <div class="col span_1_of_4">
+                <h2>Laundry Wallah</h2>
+                <h3>About us</h3>
+                <h6>
+                    Lorem ipsum dolor sit amet.
+                    Necessitatibus nisi eos optio placeat.
+                </h6>
+            </div>
+            <div class="col span_1_of_4">
+                <h3>Important Links</h3>
+                <ul class="footer-nav">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="col span_1_of_4">
+                <h3>Contact</h3>
+                <h6>laundrymail@site.com</p>
+                <h6>+91 9123456780</p>
+                <h6>&nbsp;</p>
+            </div>
+            <div class="col span_1_of_4">
+                <h3>Social Links</h3>
+                <ul class="social-links">
+                    <li><a href="#"><ion-icon class="insta" name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon class="fb" name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon class="twitter" name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon class="google" name="logo-youtube"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <p>Copyright &copy; 2022 by @laundry_wallah. All rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Resources/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+        <script>
+          AOS.init();
+        </script>
+
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+            
+              // Store hash
+              var hash = this.hash;
+            
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+            
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+    </script>
+</body>
+</html>
