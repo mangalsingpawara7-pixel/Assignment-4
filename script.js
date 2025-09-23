@@ -60,3 +60,21 @@ function sendEmail() {
       console.error(error);
     });
 }
+
+function toggleItem(button, name, price) {
+  const itemIndex = cart.findIndex(item => item.name === name);
+
+  if (itemIndex === -1) {
+    // Item not in cart → Add it
+    cart.push({ name, price });
+    button.textContent = "Remove Item";
+    button.style.color = "red";   // red for remove
+  } else {
+    // Item already in cart → Remove it
+    cart.splice(itemIndex, 1);
+    button.textContent = "Add Item";
+    button.style.color = "green"; // green for add
+  }
+
+  updateCart();
+}
